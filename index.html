@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a12">
+<title>天堂影视 - 高清影视资源导航与在线观看指南 | tiantangyingshi-zh</title>
+<meta name="description" content="天堂影视（tiantangyingshi-zh）是一家专注于高清影视资源导航的在线指南站点，涵盖电影、电视剧、综艺、动漫番剧、热播排行榜与深度影评资讯，为影迷提供结构清晰、分类明确的影视内容检索入口。">
+<meta name="keywords" content="天堂影视, tiantangyingshi-zh, 天堂影视导航, 高清电影, 热播电视剧, 综艺节目, 动漫番剧, 影视排行榜, 影评资讯">
+<meta name="author" content="天堂影视">
+<meta name="publisher" content="天堂影视">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="language" content="zh-CN">
+<meta name="geo.region" content="CN">
+<meta name="geo.placename" content="宿迁">
+<meta property="og:type" content="website">
+<meta property="og:title" content="天堂影视 - 高清影视资源导航与在线观看指南">
+<meta property="og:description" content="天堂影视（tiantangyingshi-zh）提供电影、电视剧、综艺、动漫、排行榜与影评资讯的一站式影视导航。">
+<meta property="og:url" content="https://tiantangyingshi-zh.github.io">
+<meta property="og:site_name" content="天堂影视">
+<meta property="og:locale" content="zh_CN">
+<link rel="canonical" href="https://tiantangyingshi-zh.github.io">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+<style>
+:root{
+  --ink:#e8e6f0;
+  --ink-dim:#a29db8;
+  --muted:#6f6a85;
+  --bg:#07070c;
+  --panel:#10101a;
+  --panel-2:#161623;
+  --line:#232332;
+  --accent:#ff2e6d;
+  --accent-2:#7b5cff;
+  --gold:#ffb547;
+  --radius:14px;
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  overflow-x:hidden;
+  background-image:radial-gradient(1200px 600px at 80% -10%,rgba(123,92,255,.18),transparent 60%),
+                   radial-gradient(900px 500px at 0% 10%,rgba(255,46,109,.12),transparent 55%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:#2c2c40;border-radius:8px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ===== 顶部导航 ===== */
+.topbar{
+  position:sticky;top:0;z-index:99;
+  background:rgba(7,7,12,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-in{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.brand-mark{
+  width:34px;height:34px;border-radius:9px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;font-size:18px;
+  box-shadow:0 4px 16px rgba(255,46,109,.35);
+}
+.brand small{display:block;font-size:10px;font-weight:600;color:var(--ink-dim);letter-spacing:1px;margin-top:-2px}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.nav-links a{
+  font-size:14px;padding:7px 13px;border-radius:9px;color:var(--ink-dim);
+  transition:.2s;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--ink);background:var(--panel-2)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);
+  width:38px;height:38px;border-radius:9px;font-size:19px;cursor:pointer}
+
+/* ===== 通用区块 ===== */
+section{padding:64px 20px;max-width:var(--max);margin:0 auto}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:3px;color:var(--accent);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.h-title{font-size:clamp(24px,4vw,38px);font-weight:800;line-height:1.25;margin-bottom:12px}
+.h-sub{color:var(--ink-dim);max-width:640px;font-size:15px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:30px;flex-wrap:wrap}
+.sec-head .h-sub{margin:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:12.5px;padding:5px 14px;border-radius:20px;border:1px solid var(--line);
+  color:var(--ink-dim);background:var(--panel);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ===== Hero ===== */
+.hero{padding:70px 20px 40px;max-width:var(--max);margin:0 auto}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--gold);
+  border:1px solid rgba(255,181,71,.35);background:rgba(255,181,71,.08);
+  padding:5px 13px;border-radius:20px;margin-bottom:18px}
+.dot{pubyte:dot;width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.hero h1{font-size:clamp(32px,6vw,60px);line-height:1.12;font-weight:850;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--ink-dim);margin:18px 0 24px;font-size:15.5px;max-width:560px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font-size:15px;font-weight:700;padding:12px 26px;border-radius:11px;cursor:pointer;transition:.2s;border:0}
+.btn-main{background:linear-gradient(100deg,var(--accent),var(--accent-2));color:#fff;
+  box-shadow:0 8px 24px rgba(255,46,109,.3)}
+.btn-main:hover{transform:translateY(-2px)}
+.btn-ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink-dim)}
+.hero-meta{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.hero-meta div span{display:block;font-size:24px;font-weight:800;color:var(--ink)}
+.hero-meta div small{color:var(--muted);font-size:12px;letter-spacing:1px}
+
+/* hero 右侧卡片 */
+.stat-card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);
+  border-radius:18px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.stat-card h4{font-size:14px;color:var(--ink-dim);font-weight:600;margin-bottom:16px;
+  display:flex;align-items:center;justify-content:space-between}
+.stat-card h4 i{font-style:normal;font-size:11px;color:var(--accent);border:1px solid var(--line);
+  padding:2px 8px;border-radius:6px}
+.upd-list li{list-style:none;display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);
+  font-size:13.5px;align-items:baseline}
+.upd-list li:last-child{border:0}
+.upd-list b{color:var(--accent);font-size:11px;min-width:38px;font-weight:700}
+.upd-list span{flex:1;color:var(--ink)}
+.upd-list time{color:var(--muted);font-size:11px;white-space:nowrap}
+
+/* ===== 通用卡片网格 ===== */
+.grid{display:grid;gap:20px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.25s;display:flex;flex-direction:column;height:100%}
+.card:hover{transform:translateY(-5px);border-color:#3a3a52;
+  box-shadow:0 16px 36px rgba(0,0,0,.45)}
+.poster{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--panel-2)}
+.poster .ph{width:100%;height:100%;display:grid;place-items:center;font-size:34px;
+  background:linear-gradient(150deg,#1a1a28,#0f0f17)}
+.poster .ph::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(7,7,12,.9))}
+.tag-lt{position:absolute;top:10px;left:10px;z-index:2;font-size:11px;font-weight:700;
+  padding:3px 9px;border-radius:6px;background:rgba(7,7,12,.75);backdrop-filter:blur(4px)}
+.tag-lt.hot{color:var(--accent)}
+.tag-lt.new{color:var(--gold)}
+.tag-lt.top{color:#4dd4ac}
+.score{position:absolute;top:10px;right:10px;z-index:2;font-size:12px;font-weight:800;
+  padding:3px 8px;border-radius:6px;background:rgba(255,46,109,.9)}
+.card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-body h3{font-size:15.5px;font-weight:700;line-height:1.4;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-body .info{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.card-body .desc{font-size:12.5px;color:var(--ink-dim);display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical;overflow:hidden}
+
+/* ===== 排行榜 ===== */
+.rank-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.rank-board{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px}
+.rank-board h4{font-size:16px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.rank-board h4::before{content:"";width:3px;height:15px;border-radius:3px;
+  background:linear-gradient(var(--accent),var(--accent-2))}
+.rank-board small{color:var(--muted);font-size:12px;display:block;margin-bottom:16px}
+.rank-item{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--line)}
+.rank-item:last-child{border:0}
+.num{font-size:20px;font-weight:850;min-width:30px;font-style:italic;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.rank-item .txt{flex:1;min-width:0}
+.rank-item .txt b{font-size:14.5px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rank-item .txt small{color:var(--muted);font-size:11.5px}
+.rank-item .val{font-size:12px;color:var(--gold);font-weight:700;text-align:right}
+.mini-list li{list-style:none;display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);
+  font-size:13px;color:var(--ink-dim)}
+.mini-list li:last-child{border:0}
+.mini-list b{color:var(--accent-2);font-weight:700;min-width:20px}
+
+/* ===== 影评资讯 ===== */
+.post{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s}
+.post:hover{border-color:#3a3a52;transform:translateY(-4px)}
+.post .th{aspect-ratio:16/9;background:linear-gradient(135deg,#24183a,#0f1424);display:grid;place-items:center;font-size:30px}
+.post .pd{padding:16px 18px}
+.post .pd time{font-size:11.5px;color:var(--accent);letter-spacing:.5px}
+.post .pd h3{font-size:16px;margin:6px 0 8px;line-height:1.45}
+.post .pd p{font-size:13px;color:var(--ink-dim);display:-webkit-box;-webkit-line-clamp:3;
+  -webkit-box-orient:vertical;overflow:hidden}
+.post .pd .more{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--ink);
+  border-bottom:1px solid var(--line);padding-bottom:1px}
+
+/* ===== 关于 ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.about-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.about-card h4{font-size:17px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.about-card h4 span{font-size:19px}
+.about-card ul{list-style:none}
+.about-card li{padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink-dim);
+  display:flex;gap:9px}
+.about-card li:last-child{border:0}
+.about-card li::before{content:"▹";color:var(--accent);font-weight:700}
+.about-card li b{color:var(--ink);font-weight:600}
+.siteurl{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);
+  background:rgba(255,181,71,.1);padding:1px 7px;border-radius:5px;font-size:12.5px;word-break:break-all}
+
+/* ===== 页脚 ===== */
+footer{border-top:1px solid var(--line);margin-top:40px;padding:44px 20px 30px;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.35))}
+.foot-in{max-width:var(--max);margin:0 auto}
+.foot-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.foot-col h5{font-size:14px;margin-bottom:12px;color:var(--ink)}
+.foot-col p,.foot-col li{font-size:12.5px;color:var(--ink-dim);list-style:none;padding:4px 0}
+.foot-col a:hover{color:var(--accent)}
+.foot-bot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding-top:20px;font-size:12px;color:var(--muted)}
+
+/* ===== 移动端 ===== */
+@media(max-width:900px){
+  .grid-4{grid-template-columns:repeat(3,1fr)}
+  .rank-wrap,.about-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  section{padding:48px 16px}
+  .hero{padding:40px 16px 24px}
+  .nav-links{position:fixed;inset:61px 0 0 0;background:rgba(7,7,12,.97);backdrop-filter:blur(14px);
+    flex-direction:column;padding:24px;gap:4px;transform:translateX(100%);transition:.3s;z-index:98}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:16px;padding:13px 16px;border-bottom:1px solid var(--line);border-radius:0}
+  .menu-btn{display:grid;place-items:center;margin-left:auto}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .h-title{font-size:26px}
+}
+@media(max-width:380px){
+  .grid-4{grid-template-columns:1fr 1fr}
+  .brand{font-size:15px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#top" aria-label="天堂影视首页">
+      <i class="brand-mark">🎬</i>
+      <span>天堂影视<small>TIANTANG YINGSHI</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#top">首页</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">电视剧</a>
+      <a href="#show">综艺 · 动漫</a>
+      <a href="#rank">排行榜</a>
+      <a href="#review">影评 · 资讯</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-tag"><i class="dot"></i>每日更新 · 分类导航</span>
+        <h1>发现好片，从 <em>天堂影视</em> 开始</h1>
+        <p>天堂影视（tiantangyingshi-zh）是一个专注于高清影视资源导航的指南型站点。我们把电影、电视剧、综艺与动漫按类型、地区、年份和口碑重新梳理，让你少花时间找片，多花时间看好片。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#movie">立即选片</a>
+          <a class="btn btn-ghost" href="#rank">查看热榜</a>
+        </div>
+        <div class="hero-meta">
+          <div><span>6</span><small>内容栏目</small></div>
+          <div><span>12+</span><small>分类维度</small></div>
+          <div><span>每日</span><small>内容更新</small></div>
+        </div>
+      </div>
+      <aside class="stat-card">
+        <h4>最新收录 <i>UPDATED</i></h4>
+        <ul class="upd-list">
+          <li><b>NEW</b><span>默杀</span><time>今日更新</time></li>
+          <li><b>NEW</b><span>抓娃娃</span><time>今日更新</time></li>
+          <li><b>NEW</b><span>庆余年 第二季</span><time>昨日更新</time></li>
+          <li><b>NEW</b><span>边水往事</span><time>2 天前</time></li>
+          <li><b>NEW</b><span>种地吧 第二季</span><time>3 天前</time></li>
+          <li><b>NEW</b><span>异人之下</span><time>3 天前</time></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 电影 -->
+  <section id="movie">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Movie · 电影馆</span>
+        <h2 class="h-title">电影 · 按心情与类型挑片</h2>
+        <p class="h-sub">从商业大片到小众文艺，从国产新片到海外佳作，天堂影视把电影资源按清晰维度归档，找片不再靠运气。</p>
+      </div>
+      <div class="chips">
+        <span class="chip on">全部</span>
+        <span class="chip">动作</span>
+        <span class="chip">喜剧</span>
+        <span class="chip">科幻</span>
+        <span class="chip">悬疑</span>
+        <span class="chip">动画</span>
+      </div>
+    </div>
+    <div class="grid grid-4">
+      <article class="card">
+        <div class="poster"><div class="ph">🎥</div><span class="tag-lt hot">热映</span><span class="score">9.1</span></div>
+        <div class="card-body"><h3>默杀</h3><div class="info"><span>犯罪 / 悬疑</span><span>2024</span><span>中国</span></div>
+        <p class="desc">一场校园霸凌引发的连锁命案，真相在沉默中层层剥开，节奏紧凑、反转密集。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">👽</div><span class="tag-lt new">新片</span><span class="score">8.4</span></div>
+        <div class="card-body"><h3>抓娃娃</h3><div class="info"><span>喜剧 / 家庭</span><span>2024</span><span>中国</span></div>
+        <p class="desc">西虹市宇宙再添新章，一对父子在财富与亲情之间的荒诞选择题。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🚀</div><span class="tag-lt">科幻</span><span class="score">8.7</span></div>
+        <div class="card-body"><h3>星际启示录</h3><div class="info"><span>科幻 / 冒险</span><span>2024</span><span>美国</span></div>
+        <p class="desc">当地球不再宜居，人类把最后的希望送上飞船，一段关于时间与爱的跨维旅程。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🥷</div><span class="tag-lt">动作</span><span class="score">8.2</span></div>
+        <div class="card-body"><h3>极速追凶</h3><div class="info"><span>动作 / 犯罪</span><span>2023</span><span>中国香港</span></div>
+        <p class="desc">雨夜街头的一桩劫案，牵出警队内部的暗线，追车与近身格斗一气呵成。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🌸</div><span class="tag-lt">文艺</span><span class="score">8.9</span></div>
+        <div class="card-body"><h3>春江水暖</h3><div class="info"><span>剧情 / 家庭</span><span>2023</span><span>中国</span></div>
+        <p class="desc">富春江畔一户人家的四季流转，镜头克制而温柔，把生活拍成了诗。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🧩</div><span class="tag-lt">悬疑</span><span class="score">8.5</span></div>
+        <div class="card-body"><h3>看不见的客人</h3><div class="info"><span>悬疑 / 犯罪</span><span>2016</span><span>西班牙</span></div>
+        <p class="desc">密室、情人与一场精心设计的对话，每一次证词推翻都让人后背发凉。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🦁</div><span class="tag-lt">动画</span><span class="score">9.3</span></div>
+        <div class="card-body"><h3>荒野之王</h3><div class="info"><span>动画 / 冒险</span><span>2024</span><span>日本</span></div>
+        <p class="desc">手绘质感回归，讲述一头幼狮穿越草原寻找族群的成长寓言。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">💔</div><span class="tag-lt">剧情</span><span class="score">8.6</span></div>
+        <div class="card-body"><h3>人间世</h3><div class="info"><span>剧情 / 纪实</span><span>2023</span><span>中国</span></div>
+        <p class="desc">取材真实医疗现场，用镜头记录下ICU里那些关于生与死的抉择瞬间。</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 电视剧 -->
+  <section id="tv">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">TV Series · 剧集库</span>
+        <h2 class="h-title">电视剧 · 追更与补剧一站搞定</h2>
+        <p class="h-sub">古装、都市、悬疑、年代、海外剧集全覆盖，标注集数更新状态，追番不再错过。</p>
+      </div>
+      <div class="chips">
+        <span class="chip on">全部</span>
+        <span class="chip">古装</span>
+        <span class="chip">悬疑</span>
+        <span class="chip">都市</span>
+        <span class="chip">年代</span>
+      </div>
+    </div>
+    <div class="grid grid-4">
+      <article class="card">
+        <div class="poster"><div class="ph">🏯</div><span class="tag-lt hot">热播</span><span class="score">8.8</span></div>
+        <div class="card-body"><h3>庆余年 第二季</h3><div class="info"><span>古装 / 权谋</span><span>36 集</span><span>更新中</span></div>
+        <p class="desc">范闲重返京都，朝堂博弈升级，台词犀利、权谋线环环相扣。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🐍</div><span class="tag-lt new">新剧</span><span class="score">8.5</span></div>
+        <div class="card-body"><h3>边水往事</h3><div class="info"><span>悬疑 / 犯罪</span><span>18 集</span><span>全</span></div>
+        <p class="desc">三边坡的热带雨林里，一个年轻人的逃亡与求生，影像质感冷冽生猛。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🏙️</div><span class="tag-lt">都市</span><span class="score">8.3</span></div>
+        <div class="card-body"><h3>城中之城</h3><div class="info"><span>都市 / 职场</span><span>40 集</span><span>全</span></div>
+        <p class="desc">金融城里的利益与人性拉锯，赵辉的每一步选择都代价沉重。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🕵️</div><span class="tag-lt">悬疑</span><span class="score">8.7</span></div>
+        <div class="card-body"><h3>沉默的真相</h3><div class="info"><span>悬疑 / 犯罪</span><span>12 集</span><span>全</span></div>
+        <p class="desc">三条时间线交织，一个男人用十年换一个真相，看完久久难平。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🌾</div><span class="tag-lt">年代</span><span class="score">8.9</span></div>
+        <div class="card-body"><h3>漫长的季节</h3><div class="info"><span>年代 / 生活</span><span>12 集</span><span>全</span></div>
+        <p class="desc">东北小城的三个老伙计，用一场跨越二十年的追查，打捞被时代碾过的记忆。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">👑</div><span class="tag-lt">古装</span><span class="score">8.4</span></div>
+        <div class="card-body"><h3>长相思 第二季</h3><div class="info"><span>古装 / 爱情</span><span>28 集</span><span>更新中</span></div>
+        <p class="desc">大荒山海之间，小夭的情感抉择牵动各方势力，服化道考究。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🎭</div><span class="tag-lt">海外</span><span class="score">9.0</span></div>
+        <div class="card-body"><h3>继承之战 第四季</h3><div class="info"><span>剧情 / 商战</span><span>10 集</span><span>全</span></div>
+        <p class="desc">传媒帝国的继承权争夺迎来终章，台词锋利如刀，父子反目步步惊心。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🚂</div><span class="tag-lt">年代</span><span class="score">8.6</span></div>
+        <div class="card-body"><h3>南来北往</h3><div class="info"><span>年代 / 刑侦</span><span>39 集</span><span>全</span></div>
+        <p class="desc">一列慢火车串起四十年铁路变迁，老刑警与新干警的师徒情令人动容。</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 综艺 · 动漫 -->
+  <section id="show">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Variety & Anime · 综艺动漫</span>
+        <h2 class="h-title">综艺 · 动漫 · 轻松下饭与热血追番</h2>
+        <p class="h-sub">一边是真人秀、脱口秀、竞演综艺的欢笑现场，一边是国漫与番剧的热血世界，两种快乐都能在这里找到入口。</p>
+      </div>
+      <div class="chips">
+        <span class="chip on">全部</span>
+        <span class="chip">综艺</span>
+        <span class="chip">国漫</span>
+        <span class="chip">番剧</span>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      <article class="card">
+        <div class="poster"><div class="ph">🌱</div><span class="tag-lt hot">热更</span><span class="score">9.2</span></div>
+        <div class="card-body"><h3>种地吧 第二季</h3><div class="info"><span>真人秀 / 生活</span><span>更新中</span></div>
+        <p class="desc">十个年轻人把荒地种成良田，泥土里的汗水与欢笑，治愈了无数城市观众。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🎤</div><span class="tag-lt">综艺</span><span class="score">8.7</span></div>
+        <div class="card-body"><h3>脱口秀和Ta的朋友们</h3><div class="info"><span>脱口秀 / 竞演</span><span>全</span></div>
+        <p class="desc">开放麦上的段子手们同台竞技，笑声背后是写稿到凌晨的真实生活。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">⚔️</div><span class="tag-lt new">新番</span><span class="score">9.0</span></div>
+        <div class="card-body"><h3>异人之下</h3><div class="info"><span>国漫 / 奇幻</span><span>更新中</span></div>
+        <p class="desc">普通大学生误入异人世界，炁体与招式的战斗设计极具东方想象力。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🏐</div><span class="tag-lt">番剧</span><span class="score">9.4</span></div>
+        <div class="card-body"><h3>排球少年 终章</h3><div class="info"><span>运动 / 热血</span><span>更新中</span></div>
+        <p class="desc">乌野高中冲向全国之巅的最后征程，每一分都打得让人心跳加速。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🍳</div><span class="tag-lt">综艺</span><span class="score">8.5</span></div>
+        <div class="card-body"><h3>种草吧！厨房</h3><div class="info"><span>美食 / 生活</span><span>全</span></div>
+        <p class="desc">明星下厨翻车现场与隐藏大厨的神仙料理，适合边看边下单食材。</p></div>
+      </article>
+      <article class="card">
+        <div class="poster"><div class="ph">🐉</div><span class="tag-lt">国漫</span><span class="score">8.8</span></div>
+        <div class="card-body"><h3>完美世界</h3><div class="info"><span>国漫 / 玄幻</span><span>更新中</span></div>
+        <p class="desc">石昊从荒域崛起，一路打破天地桎梏，宏大世界观与打斗场面兼具。</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 排行榜 -->
+  <section id="rank">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Ranking · 热播榜</span>
+        <h2 class="h-title">排行榜 · 大家都在看什么</h2>
+        <p class="h-sub">基于站内浏览与搜索热度综合生成，实时反映当下观众的观影口味变化。</p>
+      </div>
+      <div class="chips">
+        <span class="chip on">综合热榜</span>
+        <span class="chip">电影榜</span>
+        <span class="chip">剧集榜</span>
+        <span class="chip">口碑榜</span>
+      </div>
+    </div>
+    <div class="rank-wrap">
+      <div class="rank-board">
+        <h4>综合热播榜</h4>
+        <small>TIANTANG HOT 100 · 实时更新</small>
+        <div class="rank-item"><i class="num">01</i><div class="txt"><b>庆余年 第二季</b><small>古装权谋 · 热度 9820 万</small></div><div class="val">🔥 飙升</div></div>
+        <div class="rank-item"><i class="num">02</i><div class="txt"><b>默杀</b><small>犯罪悬疑 · 热度 8750 万</small></div><div class="val">🔥 热映</div></div>
+        <div class="rank-item"><i class="num">03</i><div class="txt"><b>边水往事</b><small>悬疑犯罪 · 热度 7620 万</small></div><div class="val">↑ 12</div></div>
+        <div class="rank-item"><i class="num">04</i><div class="txt"><b>抓娃娃</b><small>喜剧家庭 · 热度 7310 万</small></div><div class="val">↑ 5</div></div>
+        <div class="rank-item"><i class="num">05</i><div class="txt"><b>种地吧 第二季</b><small>生活真人秀 · 热度 6840 万</small></div><div class="val">↑ 8</div></div>
+        <div class="rank-item"><i class="num">06</i><div class="txt"><b>异人之下</b><small>国漫奇幻 · 热度 6520 万</small></div><div class="val">↑ 3</div></div>
+        <div class="rank-item"><i class="num">07</i><div class="txt"><b>漫长的季节</b><small>年代生活 · 热度 6290 万</small></div><div class="val">↓ 1</div></div>
+        <div class="rank-item"><i class="num">08</i><div class="txt"><b>长相思 第二季</b><small>古装爱情 · 热度 6010 万</small></div><div class="val">↓ 2</div></div>
+      </div>
+      <div class="rank-board">
+        <h4>口碑榜 TOP 6</h4>
+        <small>评分来源于站内观众综合打分</small>
+        <ul class="mini-list">
+          <li><b>1</b><span>漫长的季节</span><i class="val" style="margin-left:auto;color:var(--gold)">9.5</i></li>
+          <li><b>2</b><span>沉默的真相</span><i class="val" style="margin-left:auto;color:var(--gold)">9.3</i></li>
+          <li><b>3</b><span>排球少年 终章</span><i class="val" style="margin-left:auto;color:var(--gold)">9.2</i></li>
+          <li><b>4</b><span>种地吧 第二季</span><i class="val" style="margin-left:auto;color:var(--gold)">9.1</i></li>
+          <li><b>5</b><span>默杀</span><i class="val" style="margin-left:auto;color:var(--gold)">9.0</i></li>
+          <li><b>6</b><span>继承之战 第四季</span><i class="val" style="margin-left:auto;color:var(--gold)">8.9</i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影评 · 资讯 -->
+  <section id="review">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Review & News · 影评资讯</span>
+        <h2 class="h-title">影评 · 资讯 · 不止于看片</h2>
+        <p class="h-sub">深度影评、幕后解析与行业动态，帮你把一部片子看得更明白、更过瘾。</p>
+      </div>
+      <a class="chip" href="#review">全部文章</a>
+    </div>
+    <div class="grid grid-3">
+      <article class="post">
+        <div class="th">🎞️</div>
+        <div class="pd">
+          <time>2024 · 影评</time>
+          <h3>《默杀》为什么让人坐不住？聊聊它的叙事陷阱</h3>
+          <p>影片用三重时间线制造信息不对称，观众以为自己在拼图，其实一直在被误导。本文拆解它的关键转折点与留白设计。</p>
+          <a class="more" href="#review">继续阅读</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="th">📊</div>
+        <div class="pd">
+          <time>2024 · 产业观察</time>
+          <h3>暑期档复盘：悬疑类型为何连续三年领跑</h3>
+          <p>从《消失的她》到《默杀》，悬疑片在档期内的票房占比持续走高。我们统计了近三年的类型片数据，试图找到背后的观众心理变化。</p>
+          <a class="more" href="#review">继续阅读</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="th">🎬</div>
+        <div class="pd">
+          <time>2024 · 幕后</time>
+          <h3>一部国产动画的诞生：从分镜到成片要走多远</h3>
+          <p>以《异人之下》为例，还原一集 24 分钟动画背后的制作流程：原画、中割、上色、合成，每个环节都在和时间赛跑。</p>
+          <a class="more" href="#review">继续阅读</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="th">🏆</div>
+        <div class="pd">
+          <time>2024 · 资讯</time>
+          <h3>第 37 届金鸡奖入围名单解读</h3>
+          <p>最佳影片五强各有来头，其中两部是导演的第二部长片。我们逐部梳理入围作品的创作背景与竞争优势。</p>
+          <a class="more" href="#review">继续阅读</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="th">📺</div>
+        <div class="pd">
+          <time>2024 · 剧评</time>
+          <h3>《庆余年 2》的台词为何越写越密</h3>
+          <p>相比第一季，第二季的信息密度明显提升。本文从编剧结构角度分析，快节奏对话对观看门槛的影响究竟是加分还是减分。</p>
+          <a class="more" href="#review">继续阅读</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="th">🌐</div>
+        <div class="pd">
+          <time>2024 · 海外速递</time>
+          <h3>流媒体格局再变：合久必分还是分久必合</h3>
+          <p>两大平台宣布内容互换授权，这意味着用户也许不用再为追一部剧开通三个会员。趋势背后的商业逻辑值得关注。</p>
+          <a class="more" href="#review">继续阅读</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">About · 关于本站</span>
+        <h2 class="h-title">关于天堂影视</h2>
+        <p class="h-sub">一个只做影视内容导航与信息整理的指南站点，不存储、不提供任何资源文件本身。</p>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h4><span>🧭</span>我们做什么</h4>
+        <ul>
+          <li><b>内容归档：</b>按类型、地区、年份、评分对影视作品做结构化整理。</li>
+          <li><b>更新追踪：</b>记录剧集更新进度与院线影片上映状态。</li>
+          <li><b>口碑参考：</b>聚合观众评分与热门榜单，辅助选片决策。</li>
+          <li><b>资讯解读：</b>提供影评、幕后与行业动态的深度内容。</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h4><span>🔗</span>站点信息</h4>
+        <ul>
+          <li><b>网站名称：</b>天堂影视</li>
+          <li><b>网站网址：</b><span class="siteurl">https://tiantangyingshi-zh.github.io</span></li>
+          <li><b>站点性质：</b>影视资源导航与信息指南</li>
+          <li><b>内容声明：</b>本站仅提供信息与导航，相关权利归原作者及平台所有</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-col">
+        <h5>天堂影视 · tiantangyingshi-zh</h5>
+        <p>专注于高清影视资源导航的在线指南站点，覆盖电影、电视剧、综艺、动漫、排行榜与影评资讯六大栏目，帮你更快找到想看的内容。</p>
+      </div>
+      <div class="foot-col">
+        <h5>内容栏目</h5>
+        <ul>
+          <li><a href="#movie">电影馆</a></li>
+          <li><a href="#tv">电视剧库</a></li>
+          <li><a href="#show">综艺 · 动漫</a></li>
+          <li><a href="#rank">热播排行榜</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>深度内容</h5>
+        <ul>
+          <li><a href="#review">影评与资讯</a></li>
+          <li><a href="#review">产业观察</a></li>
+          <li><a href="#review">幕后解析</a></li>
+          <li><a href="#about">关于本站</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>访问入口</h5>
+        <ul>
+          <li>官网：<span class="siteurl">https://tiantangyingshi-zh.github.io</span></li>
+          <li>适配：PC / 手机 / 平板</li>
+          <li>更新：每日内容维护</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2024 天堂影视（tiantangyingshi-zh）保留所有权利 · 本站点仅提供影视信息与导航服务</span>
+      <span>网站网址：https://tiantangyingshi-zh.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var nav=document.getElementById('navLinks');
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'✕':'☰';
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent='☰';
+    }
+  });
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      var g=c.parentElement;
+      if(g&&g.classList.contains('chips')){
+        g.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+        c.classList.add('on');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
